@@ -1,1 +1,19 @@
-This is a placeholder file because github doesn't like empty folders.
+1. Definition of differentiation and numerical differentiation
+2. Application: Initial Value Problem
+3. Taylor Series Expansion, Taylor error
+4. Economic Application: Behavioral Optimasation within heterogeneous agent model
+5. Trancation error and Rounding error
+	optimal h = max(\abs(x),1) * \sqrt(mp)
+	mp: machine precision
+6. Forward, backward and central difference approximation
+	Forward and backward: O(h)
+	Central: O(h**2)
+7. Richardson Extrapolation
+8. Complex point differentiation
+	f(x+ih) = f(x) + f'(x)*i*h - f''(y)*h**2/2
+	Im(f(x+ih)) = f'(x)*h
+	f'(x) = Im(f(x+ih))/h + O(h**2)
+	Re(f(x+ih)) = f(x)
+	f''(x) = 2/h**2 * (f(x) - Re(f(x+ih))) + O(h**2)
+
+
