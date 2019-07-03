@@ -1,3 +1,4 @@
+Numerical Differentiation
 1. Definition of differentiation and numerical differentiation
 2. Application: Initial Value Problem
 3. Taylor Series Expansion, Taylor error
@@ -16,4 +17,23 @@
 	Re(f(x+ih)) = f(x)
 	f''(x) = 2/h**2 * (f(x) - Re(f(x+ih))) + O(h**2)
 
-
+Numerical integration
+1. motivation
+	Z_t  = 1 - p + p * Z_(t-1) + epsilon_t
+	E[epsilon_t] = 0
+	E[epsilon_t^2] = sigma_epsilon^2
+	U_c(c_t) = beta * E_t[U_c(c_(t+1)) * (alpha*Z_(t+1)*k_(t+1)^(alpha-1)+1-delta)
+	Special case: Brock Mirman, assume utility is log, and delta = 1
+2. Approximation (Interpolation)
+	Vondermonde matrix, problem: very similar functions
+	Chebyshev polynomials, Chebyshev points
+3. Quadrature: integral(0 to 1) h(x)dx \approx sum(i=1 to n) w_i * h(x_i)
+	Newton-Cotes: do not choosing weights (use 1/n for w_i, ie. use equidistant nodes)
+		Midpoint rule: 1 node
+		Trapizoid rule: 2 nodes
+		Simpsons rule: 3 nodes, ie. a quadratic approximation of the function on the short interval
+	Gaussian quadrature:
+		let the approximation for polynomial with a certain degree to be exact, solve for weights and position of nodes
+		use when the function can be reasonably well approximated by polynomial, ie. continuous functions
+		Gauss-Legendre
+		Gauss-Hermite
