@@ -1,0 +1,5 @@
+## Week 1:
+- For Felix ECON_PS1 Q2, I was not able to get the tic-tac-toe working, I have written the setup so that all the boards are evaluated to a value, but was not able to figure out a way to iterate in each step.
+  1. My approach was this: for any given board, especially the very begining ones, all the values after the next move are just zero, so I have to store all of them, and then looking for the next round, until the final round, and then decide which of the moves of the current board will give me a positive value at the very last stage, if I implement this algorithm, for every move the program has to go through every possible states until the last, and this is not value function iteration, so I did not implement this in full but trying to figure out some ways to iterate, but finally I was not able to come up with a way to iterate.
+  2. Actually I do not even know what the iteration should be converge to, in my opinion it just converges to 0...
+- For Felix ECON_PS1 Q4(b), I did not have time to do the tensor product, but I have written some notes in the final line of the notebook to address how I would solve it.
