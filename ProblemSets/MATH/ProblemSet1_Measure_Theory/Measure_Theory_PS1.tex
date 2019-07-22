@@ -62,11 +62,11 @@ $\sigma-$algebra. For example, the countable union
 \[
 \cup_{n=2}^{\infty}\left(0,\frac{n-1}{n}\right]=\left(0,1\right)
 \]
-is not in $\mathcal{G}_{2}$. 
+is not in $\mathcal{G}_{2}$.
 \item $\ensuremath{\mathcal{G}_{3}=\{A:A\text{ is a countable union of }(\mathrm{a},\mathrm{b}],(-\infty,\mathrm{b}],\text{ and }(\mathrm{a},\infty)\}}$
 is a $\sigma-$algebra if we include $\emptyset$ in it. The proof
 follows similarly as above but now ``finite'' applies more generally
-to ``countable'' too. 
+to ``countable'' too.
 \end{itemize}
 \end{xca}
 %
@@ -88,18 +88,18 @@ contains all the subsets of $X$ by definition.
 $ $
 \begin{itemize}
 \item Since $\emptyset\in\ensuremath{\mathcal{S}_{\alpha}},\forall\alpha$,
-we thus have $\emptyset\in\ensuremath{\cap_{\alpha}\mathcal{S}_{\alpha}}$. 
+we thus have $\emptyset\in\ensuremath{\cap_{\alpha}\mathcal{S}_{\alpha}}$.
 \item Pick any $X\in\ensuremath{\cap_{\alpha}\mathcal{S}_{\alpha}}$ and
 hence $X\in\ensuremath{\mathcal{S}_{\alpha}},\forall\alpha$. Since
 a $\sigma-$algebra is closed under complements, we have $X^{c}\in\ensuremath{\mathcal{S}_{\alpha}},\forall\alpha$.
-Therefore, $X^{c}\in\cap_{\alpha}\mathcal{S}_{\alpha}$. 
+Therefore, $X^{c}\in\cap_{\alpha}\mathcal{S}_{\alpha}$.
 \item Pick countable sets $X_{1},X_{2},\ldots\in\ensuremath{\cap_{\alpha}\mathcal{S}_{\alpha}}$,
 and hence $X_{i}\in\ensuremath{\mathcal{S}_{\alpha}},\forall\alpha,\forall i$.
 Since a $\sigma-$algebra is closed under countable unions, thus $\cup_{i}X_{i}\in\ensuremath{\mathcal{S}_{\alpha}},\forall\alpha$.
-Therefore, $\cup_{i}X_{i}\in\cap_{\alpha}\mathcal{S}_{\alpha}$. 
+Therefore, $\cup_{i}X_{i}\in\cap_{\alpha}\mathcal{S}_{\alpha}$.
 \end{itemize}
 The above propositions mean that $\cap_{\alpha}\mathcal{S}_{\alpha}$
-is a $\sigma-$algebra. 
+is a $\sigma-$algebra.
 \end{xca}
 %
 \begin{xca}
@@ -112,7 +112,7 @@ Therefore
 \mu\left(B\right)=\mu\left(A\right)+\mu\left(C\right)\geq\mu\left(A\right).
 \]
 \item Let $B_{n}=\cup_{i=1}^{n}A_{i}$. Note that $B_{1}\subset B_{2}\subset B_{3}\subset\cdots$.
-By Theorem 1.25 (i), we have $\ensuremath{\lim_{n\rightarrow\infty}\mu\left(B_{n}\right)}=\mu\left(\cup_{i=1}^{\infty}B_{i}\right)$. 
+By Theorem 1.25 (i), we have $\ensuremath{\lim_{n\rightarrow\infty}\mu\left(B_{n}\right)}=\mu\left(\cup_{i=1}^{\infty}B_{i}\right)$.
 \begin{itemize}
 \item Note that $\cup_{i=1}^{\infty}B_{i}=\cup_{i=1}^{\infty}A_{i}$, hence
 $\mu\left(\cup_{i=1}^{\infty}B_{i}\right)=\mu\left(\cup_{i=1}^{\infty}A_{i}\right)$.
@@ -136,12 +136,12 @@ we have
 \end{xca}
 %
 \begin{xca}
-Let $B_{n}=A_{1}\cap A_{n}^{c}$. Since 
+Let $B_{n}=A_{1}\cap A_{n}^{c}$. Since
 \[
 \cup_{i=1}^{\infty}B_{i}=\cup_{i=1}^{\infty}\left(A_{1}\cap A_{i}^{c}\right)=A_{1}\cap\left(\cup_{i=1}^{\infty}A_{i}^{c}\right)=A_{1}\setminus\left(\cap_{i=1}^{\infty}A_{i}\right),
 \]
 we have $\mu\left(\cup_{i=1}^{\infty}B_{i}\right)=\mu\left(A_{1}\right)-\mu\left(\cap_{i=1}^{\infty}A_{i}\right)$.
-In addition, 
+In addition,
 \[
 \lim_{n\rightarrow\infty}\mu\left(B_{n}\right)=\lim_{n\rightarrow\infty}\mu\left(A_{1}\cap A_{n}^{c}\right)=\lim_{n\rightarrow\infty}\left(\mu\left(A_{1}\right)-\mu\left(A_{n}\right)\right)=\mu\left(A_{1}\right)-\lim_{n\rightarrow\infty}\mu\left(A_{n}\right).
 \]
@@ -228,7 +228,7 @@ By (2), $\max\left(f,g\right)$ is measurable.
 By (2), $\min\left(f,g\right)$ is measurable.
 \item First, $g\left(x\right)=-1$ is measurable. Thus $-f=f\cdot g$ is
 measurable. Next note that $\left|f\right|=\max\left(f,-f\right)$,
-so $\left|f\right|$ is also measurable. 
+so $\left|f\right|$ is also measurable.
 \end{itemize}
 \end{xca}
 %
@@ -248,7 +248,7 @@ hence the convergence in is uniform.
 \section{Lebesgue Integration}
 \begin{xca}
 Since $f^{+}=\max\{f(x),0\}\in\left[0,M\right)$, and $\mu\left(E\right)<\infty$,
-then 
+then
 \[
 0\leq\int_{E}f^{+}d\mu\leq M\mu\left(E\right)<\infty.
 \]
@@ -279,7 +279,7 @@ By definition this is $\int_{E}fd\mu\leq\int_{E}gd\mu$.
 Consider any $s\left(x\right)=\sum_{i=1}^{N}c_{i}\chi_{E}$ simple,
 measurable. $A\subset E$ implies that $A\cap E_{i}\subset E\cap E_{i},\forall i$.
 Hence $\mu\left(A\cap E_{i}\right)\leq\mu\left(E\cap E_{i}\right)$.
-Thus 
+Thus
 \[
 \int_{A}sd\mu=\sum_{i=1}^{N}c_{i}\mu\left(A\cap E_{i}\right)\leq\sum_{i=1}^{N}c_{i}\mu\left(E\cap E_{i}\right)=\int_{E}sd\mu.
 \]
@@ -289,13 +289,13 @@ Therefore,
  & \leq\sup\left\{ \int_{E}sd\mu:0\leq s\leq f^{+},\text{ s simple, measurable }\right\} \\
  & =\int_{E}f^{+}d\mu<\infty,
 \end{align*}
-and similarly $\int_{A}f^{-}d\mu<\infty$. So $f\in\mathscr{L}^{1}(\mu,A)$. 
+and similarly $\int_{A}f^{-}d\mu<\infty$. So $f\in\mathscr{L}^{1}(\mu,A)$.
 \end{xca}
 %
 \begin{xca}
 Let $X_{1}=A\cap B$ and $X_{2}=A-B$. Note that $X_{1}\cap X_{2}=\emptyset$
 and $A=X_{1}\cup X_{2}$. Since $B\subset A$, we have $A\cap B=B$.
-Thus 
+Thus
 \[
 \int_{A}fd\mu=\int_{B}fd\mu+\int_{A-B}fd\mu.
 \]
