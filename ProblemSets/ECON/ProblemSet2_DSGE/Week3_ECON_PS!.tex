@@ -1,0 +1,79 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\usepackage{tikz, tkz-euclide}
+\usepackage{float}
+\usepackage{changepage}
+\usepackage{titling}
+\usepackage{wrapfig}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+\graphicspath{ {./images/} }
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\DeclareMathOperator{\arctantwo}{arctan2}
+
+
+\setlength{\parindent}{10pt}
+\interfootnotelinepenalty=10000
+\setlength{\footskip}{15pt}
+
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+ 
+\begin{document}
+ 
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+\setlength{\droptitle}{0pt}
+\title{Week3\_ECON\_PS1}%replace X with the appropriate %number
+\author{\vspace{0pt} Shiqi Li}%if necessary, replace with your %course title
+\date{}
+ 
+\maketitle
+ 
+\textbf{Exercise 3} \par
+    
+    \begin{align*}
+        E_{t}\{F \tilde{X}_{t+1}+G \tilde{X}_{t}+H \tilde{X}_{t-1}+L \tilde{Z}_{t+1}+M \tilde{Z}_{t}\} &= 0\\
+        E_{t}\{F (P\tilde{X}_{t}+Q \tilde{Z}_{t+1})+G (P\tilde{X}_{t-1}+Q \tilde{Z}_{t}) +H \tilde{X}_{t-1}+L (N \tilde{Z}_{t-1}+\varepsilon_{t})+M \tilde{Z}_{t}\} &= 0\\
+        E_{t}\big\{F (P(P\tilde{X}_{t-1}+Q \tilde{Z}_{t})+Q (N \tilde{Z}_{t}+\varepsilon_{t}))+G (P\tilde{X}_{t-1}+Q \tilde{Z}_{t}) + \\
+        H \tilde{X}_{t-1}+L (N \tilde{Z}_{t}+\varepsilon_{t})+M \tilde{Z}_{t} \big\} &= 0\\
+        \intertext{Take the expectation in, and as $E{\epsilon_t} = 0$, we have:}
+        FPP \tilde{X}_{t-1}+ FPQ \tilde{Z}_{t} + PQN \tilde{Z}_{t} + GP \tilde{X}_{t-1} + GQ \tilde{Z}_{t} +\\
+        H \tilde{X}_{t-1}+L N \tilde{Z}_{t}+ NM \tilde{Z}_{t} &= 0\\
+        \intertext{Hence we have}
+        \left[(FP+G)P + H\right] \tilde{X}_{t-1} + \left[ (FQ+L)N + (FP+G)Q + M \right] \tilde{Z}_{t} = 0
+        \intertext{as desired}
+    \end{align*}
+    
+ 
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+ 
+\end{document}
