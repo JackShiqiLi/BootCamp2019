@@ -1,0 +1,145 @@
+%!TeX spellcheck = en-US
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\usepackage{tikz, tkz-euclide}
+\usepackage{float}
+\usepackage{changepage}
+\usepackage{titling}
+\usepackage{wrapfig}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+\graphicspath{ {./images/} }
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\DeclareMathOperator{\arctantwo}{arctan2}
+
+
+\setlength{\parindent}{10pt}
+\interfootnotelinepenalty=10000
+\setlength{\footskip}{15pt}
+
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+\setlength{\droptitle}{0pt}
+\title{OSE2019 Week4 Firm Dynamics \\
+Firm entry and exit}%replace X with the appropriate %number
+\author{\vspace{0pt} Shiqi Li} %if necessary, replace with your %course title
+\date{}
+
+\maketitle
+
+\textbf{Description of model} \par
+
+    \begin{itemize}
+
+        \item incumbent firm:
+        \begin{itemize}
+          \item production function: $y_{j t}=e^{\varepsilon_{j t}} k_{j t}^{\theta} n_{j t}^{\nu}$
+          \item idiosyncratic productivity follows a Markov chain: $\varepsilon_{j t}$
+          \item capital accumulation: $k_{j t+1}=(1-\delta) k_{j t}+i_{j t}$
+          \item convex adjustment cost (units of output): $-\frac{\varphi}{2}\left(\frac{i_{j t}}{k_{j t}}\right)^{2} k_{j t}$
+          \item fixed cost (units of output) to remain in operation each period: $c_{f}$
+          \item if does not pay the fixed cost, the firm sells its capital with value: $(1-\delta) k$
+        \end{itemize}
+
+        \item potential entrants:
+        \begin{itemize}
+          \item continuum of potential entrants
+          \item ex-ante identical
+          \item at the beginning of each period, each firm decides whether to pay a fixed cost $c_e$ and enter the economy.
+          \item if enters, then draw a value from idiosyncratic productivity $\varepsilon_{j t}$ from some distribution $\nu$ and begins an an incumbent firm with $k_{jt} = 0$.
+          \item no adjustment costs at $k_{jt} = 0$.
+          \item free entry among potential entrants, implies the expected value from entering is less than or equal to the entry cost $c_e$, so $c_{e} \leq \int v(\varepsilon, 0) \nu(d \varepsilon)$, with equality if entry actually takes place, i.e. $m^{*}>0$.
+        \end{itemize}
+
+      \item representative household:
+      \begin{itemize}
+        \item preference over consumption $C_t$ and labour supply $N_t$.
+        \item expected utility function: $\mathbb{E}_{0} \sum_{t=0}^{\infty} \beta^{t}\left(\log C_{t}-a N_{t}\right)$
+      \end{itemize}
+
+      \item Steady state recursive competitive equilibrium:
+      \begin{itemize}
+        \item set of incumbent value functions $v(\varepsilon, k)$
+        \item policy rules $k^{\prime}(\varepsilon, k)$ and $n(\varepsilon, k)$
+        \item a mass of entrants per period $m^*$
+        \item a measure of active firms at the beginning of the period $g^{*}(\varepsilon, k)$
+        \item real wage $w^*$ such that :
+        \begin{enumerate}
+          \item incumbent firms maximize their firm value
+          \item the free entry condition holds
+          \item the labor market clears
+          \item the measure of active firms $g^{*}(\varepsilon, k)$ is stationary
+        \end{enumerate}
+      \end{itemize}
+
+      \item Calibration:
+      \begin{align*}
+        \theta &= 0.21 \\
+        \nu &= 0.64 \\
+        \delta &= 0.1 \\
+        \beta &= 0.96 \\
+        \varphi &= 0.5 \\
+        \varepsilon_{j t+1} &= \rho \varepsilon_{j t}+\omega_{j t+1} \\
+        \omega_{j t+1} &\sim N\left(0, \sigma^{2}\right) \\
+        \rho &= 0.9 \\
+        \sigma &= 0.02 \\
+      \end{align*}
+    \end{itemize}
+
+\textbf{1: define the recursive competitive equilibrium}
+  \begin{itemize}
+    \item Firm optimization: taking $w^*$ as given, $v(\varepsilon, k)$ solves Bellman equation.
+    $$v(\varepsilon, k)=\max \left\{(1-\delta) k, v^{1}(\varepsilon, k)-c_{f}\right\}$$
+    $$v^{1}(\varepsilon, k)=\max _{k^{\prime}, n} \varepsilon k^{\theta} n^{\nu}-w^{*} n-\left(k^{\prime}-(1-\delta) k\right)-\frac{\varphi}{2}\left(\frac{k^{\prime}}{k}-(1-\delta)\right)^{2} k+\beta \mathbb{E}\left[v\left(\varepsilon^{\prime}, k^{\prime}\right)\right]$$
+    Solve for policy rules $k'(\varepsilon, k)$ and $n(\varepsilon, k)$
+    \item Free entry condition holds with market clearing:
+    $$c_{e} \leq \int v(\varepsilon, 0) \nu(d \varepsilon)$$
+    Solve for $w^*$ together with firm's optimization Problem
+    \item Solve for stationary measure of incumbent firms $g^*(\varepsilon, k)$
+  \end{itemize}
+
+\textbf{2: solve representative firm steady state equilibrium}\\
+Suppose that there are no entry and exits, all firms parcitipate in the market in all periods, and $k' = k$,  then we have
+  \begin{itemize}
+    \item Firm's FOC:
+    $$-1 - \varphi $$
+  \end{itemize}
+
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+
+\end{document}
