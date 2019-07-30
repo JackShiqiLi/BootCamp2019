@@ -131,10 +131,36 @@ Firm entry and exit}%replace X with the appropriate %number
   \end{itemize}
 
 \textbf{2: solve representative firm steady state equilibrium}\\
-Suppose that there are no entry and exits, all firms parcitipate in the market in all periods, and $k' = k$,  then we have
+Suppose that there are no entry and exits, all firms parcitipate in the market in all periods, and $k' = k = \bar{k}$, $\varepsilon = \varepsilon' = 0$,  then we have
   \begin{itemize}
+
     \item Firm's FOC:
-    $$-1 - \varphi $$
+    $$-1 - \varphi \delta + \beta V_k(k') = 0$$
+
+    \item Firm's envelope:
+    \begin{align*}
+      V_{k}(k)
+      &= \pi_{k}(k)+(1-\delta) - \frac{\varphi}{2}\left[-2 \frac{i}{k}+\left(\frac{i}{k}\right)^{2}\right] \\
+      &= \pi_{k}(k)+(1-\delta)- \frac{\varphi}{2}\left\{\left[\frac{k^{\prime}(k)}{k}-(1-\delta)\right]^{2}-2\left[\frac{k^{\prime}(k)}{k}-(1-\delta)\right]\right\}
+      \intertext{Hence in steady state,}
+      \tilde{V}_{k}\left(k^{*}\right)
+      &= \pi_{k}\left(k^{*}\right)+(1-\delta)-\frac{\varphi}{2}\left(\delta^{2}-2 \delta\right)\\
+      &= \pi_{k}\left(k^{*}\right)-\frac{\varphi}{2} \delta^{2}+(\varphi-1) \delta+1
+    \end{align*}
+
+    \item By firm's profit maximization:
+    \begin{align*}
+      \pi(k) &= \max _{n} e^{\epsilon} k^{\theta} n^{\nu}-w n
+      \intertext{take derivative w.r.t n,}
+      \implies \nu e^{\epsilon} k^{\theta} n^{\nu-1}-w &= 0\\
+      \implies w &= \nu e^{\epsilon} k^{\theta} n^{\nu-1}
+    \end{align*}
+
+    \item Combining everying above to get Euler equation:
+    \begin{align*}
+      -1-\varphi \delta+\beta\left[\theta \bar{k}^{\theta-1} n^\nu-\frac{\varphi}{2} \delta^{2}+(\varphi-1) \delta+1\right]=0
+    \end{align*}
+
   \end{itemize}
 
 
