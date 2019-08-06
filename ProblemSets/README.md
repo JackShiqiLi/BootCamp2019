@@ -15,3 +15,7 @@
 - HPC: got the idea of MPI and OMP, completed all the small exercises, did some minor changes on the projects, but did not compare the speeds for the projects between OMP, MPI and hybrid.
 - OG model: completed all the exercises, had quite good understanding on the basics of overlapping generations model.
 - Firm Dynamics: The lecture was very hard for me to catch up, tried hard to understand the materials and completed the dynare exercises, for the big exercise, was not able to finish, but was able to write out the setups, will come back to the codes if have time in the future.
+## Week 5:
+- Heterogenous agent: the simulation does not work well, all else done.
+- Asset pricing: all done, the orderbook class has some reference to Rebekah Dix's BootCamp2018 repo.
+- Pandas and Newton, Quasi-Newton: all done.
