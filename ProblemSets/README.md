@@ -19,3 +19,5 @@
 - Heterogenous agent: the simulation does not work well, all else done.
 - Asset pricing: all done, the orderbook class has some reference to Rebekah Dix's BootCamp2018 repo.
 - Pandas and Newton, Quasi-Newton: all done.
+## Week 6:
+- Will be done soon when I get back to Austrlia
